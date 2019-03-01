@@ -45,12 +45,12 @@ class Warpplates extends Extension {
             .packString(dimension.toLowerCase())
             .data;
 
-        client.sendPacket(new Buffer(packet, "hex"));
+        client.sendPacket(packet);
     }
 
     private async warpplatesFileExists(): Promise<boolean> {
         return new Promise<boolean>((resolve, reject) => {
-            fs.exists("../persistance/warpplates.json", (exists) => {
+            fs.exists("../persistence/warpplates.json", (exists) => {
                 resolve(exists);
             });
         });
@@ -73,7 +73,7 @@ class Warpplates extends Extension {
 
     private readWarpplatesFile(): Promise<string> {
         return new Promise<string>((resolve, reject) => {
-            fs.readFile("../persistance/warpplates.json", (err, data) => {
+            fs.readFile("../persistence/warpplates.json", (err, data) => {
                 if (err) {
                     reject(err);
                 } else {
@@ -85,7 +85,7 @@ class Warpplates extends Extension {
 
     private saveWarpplates(): Promise<void> {
         return new Promise<void>((resolve, reject) => {
-            fs.writeFile("../persistance/warpplates.json", JSON.stringify(this._warpplates), (err) => {
+            fs.writeFile("../persistence/warpplates.json", JSON.stringify(this._warpplates), (err) => {
                 if (err) {
                     reject(err);
                 } else {

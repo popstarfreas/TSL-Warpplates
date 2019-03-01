@@ -5,7 +5,7 @@ import CommandHandler from "../../../../commandhandler";
 import CommandHandlers from "../../../../commandhandlers";
 
 class WarpplateCommand extends CommandHandler {
-    public name = "warpplate";
+    public names = ["warpplate"];
     public permission = "warpplate.set";
     private _warpplates: Warpplates;
 
