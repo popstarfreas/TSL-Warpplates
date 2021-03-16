@@ -1,0 +1,21 @@
+{
+  "name": "warpplates",
+  "version": "2.0.0",
+  "namespace": true,
+  "suffix": ".js",
+  "package-specs": {
+      "module": "commonjs",
+      "in-source": false
+  },
+  "sources": {
+    "dir" : "src",
+    "subdirs" : true
+  },
+  "bs-dependencies": [
+      "terrariaserver-lite",
+      "reason-nodejs"
+  ],
+  "warnings": {
+      "error": "+A"
+  }
+}

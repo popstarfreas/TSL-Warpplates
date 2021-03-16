@@ -1,0 +1,25 @@
+{
+  "name": "warpplates",
+  "version": "2.0.0",
+  "description": "",
+  "scripts": {
+    "watch": "bsb -make-world -w",
+    "build:submodule": "cd ./TerrariaServer-Lite/ && npm run build:ci && cd .. && npm i --no-optional ./TerrariaServer-Lite/bmodule",
+    "build:core": "bsb -make-world",
+    "build:packed": "rollup -c && mv output/Index.js output/index.js",
+    "auto:build": "chokidar \"src/**/*\" -c \"./build.sh\""
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bs-platform": "^9.0.1",
+    "terrariaserver-lite": "file:TerrariaServer-Lite/pluginreference"
+  },
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^17.1.0",
+    "@rollup/plugin-json": "^4.1.0",
+    "@rollup/plugin-node-resolve": "^11.2.0",
+    "reason-nodejs": "github:sikanhe/reason-nodejs",
+    "rollup": "^2.41.0"
+  }
+}
