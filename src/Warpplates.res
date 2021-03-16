@@ -40,11 +40,11 @@ let saveWarpplates = (self: t) => {
 }
 
 @bs.module("fs") external readFile: (string, (Js.nullable<Js.Exn.t>, Js.undefined<NodeJs.Buffer.t>) => unit) => unit = "readFile"
-let loadWarpplates = (_self: t) => {
+let loadWarpplates = (self: t) => {
     readFile("./persistence/warpplates.json", (err, data) => {
         switch (err->Js.Nullable.toOption, data->Js.Undefined.toOption) {
             | (None, Some(data)) => {
-                self.warpplates = data->NodeJs.Buffer.toString->Js.Json.parseExn
+                self.warpplates = data->NodeJs.Buffer.toString->Js.Json.parseExn->Obj.magic
             }
             | _ => ()
         }
