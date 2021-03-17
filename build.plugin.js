@@ -3,6 +3,8 @@ var fs = require("fs")
 var path = require("path")
 
 console.log("Build Step 1 of 5")
+child_process.execSync("rm package.json")
+child_process.execSync("rm package-lock.json")
 child_process.execSync("npm i --no-package-lock --no-save rollup@2.41.0")
 child_process.execSync("npm i --no-package-lock --no-save @rollup/plugin-commonjs@17.1.0")
 child_process.execSync("npm i --no-package-lock --no-save @rollup/plugin-json@4.1.0")
