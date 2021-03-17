@@ -15,7 +15,7 @@ child_process.execSync("cp -r ../../pluginreference ./node_modules/terrariaserve
 console.log("Build Step 3 of 5")
 child_process.execSync("../../node_modules/bs-platform/bsb -make-world")
 console.log("Build Step 4 of 5")
-child_process.execSync("npx rollup -c")
+child_process.execSync("node_modules/rollup/dist/bin/rollup -c")
 child_process.execSync("mv output/Index.js output/index.js")
 console.log("Build Step 5 of 5")
 fs.renameSync("./output", "./plugin")
