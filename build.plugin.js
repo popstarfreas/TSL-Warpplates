@@ -13,7 +13,7 @@ child_process.execSync("npm i --no-package-lock --no-save @rollup/plugin-node-re
 console.log("Build Step 2 of 5")
 child_process.execSync("cp -r ../../pluginreference ./node_modules/terrariaserver-lite")
 console.log("Build Step 3 of 5")
-child_process.execSync("npx bsb -make-world")
+child_process.execSync("../../node_modules/bs-platform/bsb -make-world")
 console.log("Build Step 4 of 5")
 child_process.execSync("npx rollup -c")
 child_process.execSync("mv output/Index.js output/index.js")
