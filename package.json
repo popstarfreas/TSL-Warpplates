@@ -6,6 +6,7 @@
     "watch": "bsb -make-world -w",
     "build:submodule": "cd ./TerrariaServer-Lite/ && npm run build:ci && cd .. && npm i --no-optional ./TerrariaServer-Lite/pluginreference",
     "build:core": "bsb -make-world",
+    "build:packed:minimal": "rollup -c",
     "build:packed": "rollup -c && mv output/Index.js output/index.js",
     "auto:build": "chokidar \"src/**/*\" -c \"./build.sh\""
   },
