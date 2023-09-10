@@ -15,10 +15,7 @@
     "@darkgaming/rescript-terrariapacket": "github:popstarfreas/rescript-terrariapacket#3c76ed0",
     "@popstarfreas/rescript-nodejs": "github:popstarfreas/rescript-nodejs#cfbe2f3",
     "rescript": "^10.1.4",
-    "terrariaserver-lite": "file:TerrariaServer-Lite/pluginreference"
-  },
-  "devDependencies": {
-    "esbuild": "^0.19.2",
-    "rollup": "^2.41.0"
+    "terrariaserver-lite": "file:TerrariaServer-Lite/pluginreference",
+    "esbuild": "^0.19.2"
   }
 }
