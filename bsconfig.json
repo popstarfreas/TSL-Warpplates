@@ -13,7 +13,8 @@
     },
     "bs-dependencies": [
         "terrariaserver-lite",
-        "@popstarfreas/rescript-nodejs"
+        "@popstarfreas/rescript-nodejs",
+        "@darkgaming/rescript-terrariapacket"
     ],
     "warnings": {
         "error": "+A"

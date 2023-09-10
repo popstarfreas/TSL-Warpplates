@@ -16,6 +16,15 @@
     enabled "2.0.x"
     kuler "^2.0.0"
 
+"@darkgaming/rescript-terrariapacket@github:popstarfreas/rescript-terrariapacket#3c76ed0", "rescript-terrariapacket@github:popstarfreas/rescript-terrariapacket#3c76ed0":
+  version "1.2.0"
+  resolved "https://codeload.github.com/popstarfreas/rescript-terrariapacket/tar.gz/3c76ed05a564ba465036734206e37b0df7851f98"
+  dependencies:
+    "@popstarfreas/packetfactory" "^5.0.0"
+    "@popstarfreas/rescript-nodejs" "github:popstarfreas/rescript-nodejs#master"
+    rescript "^10.1.0"
+    typescript "^5.2.2"
+
 "@esbuild/android-arm64@0.19.2":
   version "0.19.2"
   resolved "https://registry.yarnpkg.com/@esbuild/android-arm64/-/android-arm64-0.19.2.tgz#bc35990f412a749e948b792825eef7df0ce0e073"
@@ -179,9 +188,10 @@
 
 "@popstarfreas/rescript-nodejs@github:popstarfreas/rescript-nodejs#cfbe2f3", "@popstarfreas/rescript-nodejs@github:popstarfreas/rescript-nodejs#master":
   version "16.0.0"
+  uid cfbe2f33c2b13d3f869b7af3ab2c1ec9bbec8f25
   resolved "https://codeload.github.com/popstarfreas/rescript-nodejs/tar.gz/cfbe2f33c2b13d3f869b7af3ab2c1ec9bbec8f25"
   dependencies:
-    rescript "10"
+    rescript "^10.1.4"
 
 "@tootallnate/once@1":
   version "1.1.2"
@@ -969,15 +979,6 @@ requirejs@^2.3.5:
   version "2.3.6"
   resolved "https://registry.yarnpkg.com/requirejs/-/requirejs-2.3.6.tgz#e5093d9601c2829251258c0b9445d4d19fa9e7c9"
   integrity sha512-ipEzlWQe6RK3jkzikgCupiTbTvm4S0/CAU5GlgptkN5SO6F3u0UD0K18wy6ErDqiCyP4J4YYe1HuAShvsxePLg==
-
-"rescript-terrariapacket@github:popstarfreas/rescript-terrariapacket#3c76ed0":
-  version "1.2.0"
-  resolved "https://codeload.github.com/popstarfreas/rescript-terrariapacket/tar.gz/3c76ed05a564ba465036734206e37b0df7851f98"
-  dependencies:
-    "@popstarfreas/packetfactory" "^5.0.0"
-    "@popstarfreas/rescript-nodejs" "github:popstarfreas/rescript-nodejs#master"
-    rescript "^10.1.0"
-    typescript "^5.2.2"
 
 rescript@^10.1.0, rescript@^10.1.4:
   version "10.1.4"
