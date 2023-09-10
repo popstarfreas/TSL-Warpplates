@@ -17,13 +17,13 @@ function copyDir(src, dest) {
 }
 
 console.log("Build Step 1 of 5")
-child_process.execSync("npm i")
+child_process.execSync("yarn remove terrariaserver-lite", { stdio: "inherit" })
 console.log("Build Step 2 of 5")
-copyDir("../../pluginreference", "./node_modules/terrariaserver-lite")
+child_process.execSync("yarn add ../../pluginreference", { stdio: "inherit" })
 console.log("Build Step 3 of 5")
-child_process.execSync("npm run build:core")
+child_process.execSync("npm run build:core", { stdio: "inherit" })
 console.log("Build Step 4 of 5")
-child_process.execSync("npm run build:packed:minimal")
+child_process.execSync("npm run build:packed", { stdio: "inherit" })
 fs.renameSync("./output/Index.js", "./output/index.js")
 console.log("Build Step 5 of 5")
 fs.renameSync("./output", "./plugin")
