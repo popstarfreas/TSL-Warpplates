@@ -4,17 +4,18 @@
   "description": "",
   "scripts": {
     "watch": "rescript build -w",
-    "build:submodule": "cd ./TerrariaServer-Lite/ && npm run build:ci && cd .. && npm i --no-optional ./TerrariaServer-Lite/pluginreference",
-    "build:core": "rescript build",
+    "build:submodule": "cd ./TerrariaServer-Lite/ && yarn install && yarn build:all && cd ..",
+    "build:core": "rescript",
     "build:packed": "esbuild lib/js/src/Index.js --bundle --platform=node --outfile=output/index.js",
     "auto:build": "chokidar \"src/**/*\" -c \"./build.sh\""
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@darkgaming/rescript-terrariapacket": "github:popstarfreas/rescript-terrariapacket#3c76ed0",
-    "@popstarfreas/rescript-nodejs": "github:popstarfreas/rescript-nodejs#cfbe2f3",
-    "rescript": "^10.1.4",
+    "@rescript/core": "*",
+    "terraria-packet": "git+https://github.com/popstarfreas/rescript-terrariapacket.git#8d31e306acc12c4aabaadaaeb55c50a6ef8745fd",
+    "@popstarfreas/rescript-nodejs": "git+https://github.com/popstarfreas/rescript-nodejs.git#f3bd284a3ef17a3fc7cc81ccb7c362b278ea66c7",
+    "rescript": "^11.0.0",
     "terrariaserver-lite": "file:TerrariaServer-Lite/pluginreference",
     "esbuild": "^0.19.2"
   }

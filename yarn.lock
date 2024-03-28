@@ -16,15 +16,6 @@
     enabled "2.0.x"
     kuler "^2.0.0"
 
-"@darkgaming/rescript-terrariapacket@github:popstarfreas/rescript-terrariapacket#3c76ed0", "rescript-terrariapacket@github:popstarfreas/rescript-terrariapacket#3c76ed0":
-  version "1.2.0"
-  resolved "https://codeload.github.com/popstarfreas/rescript-terrariapacket/tar.gz/3c76ed05a564ba465036734206e37b0df7851f98"
-  dependencies:
-    "@popstarfreas/packetfactory" "^5.0.0"
-    "@popstarfreas/rescript-nodejs" "github:popstarfreas/rescript-nodejs#master"
-    rescript "^10.1.0"
-    typescript "^5.2.2"
-
 "@esbuild/android-arm64@0.19.2":
   version "0.19.2"
   resolved "https://registry.yarnpkg.com/@esbuild/android-arm64/-/android-arm64-0.19.2.tgz#bc35990f412a749e948b792825eef7df0ce0e073"
@@ -140,10 +131,10 @@
   resolved "https://registry.yarnpkg.com/@gar/promisify/-/promisify-1.1.3.tgz#555193ab2e3bb3b6adc3d551c9c030d9e860daf6"
   integrity sha512-k2Ty1JcVojjJFwrg/ThKi2ujJ7XNLYaFGNB/bWT9wGR+oSMJHMa5w+CUq6p/pVrKeNNgA7pCqEcjSnHVoqJQFw==
 
-"@glennsl/bs-json@^5.0.2":
-  version "5.0.4"
-  resolved "https://registry.yarnpkg.com/@glennsl/bs-json/-/bs-json-5.0.4.tgz#8a80906f3b5e04d78dc06722e5987ff6499c89a8"
-  integrity sha512-Th9DetZjRlMZrb74kgGJ44oWcoFyOTE884WlSuXft0Cd+J09vHRxiB7eVyK7Gthb4cSevsBBJDHYAbGGL25wPw==
+"@greenlabs/ppx-spice@^0.2.1":
+  version "0.2.1"
+  resolved "https://registry.yarnpkg.com/@greenlabs/ppx-spice/-/ppx-spice-0.2.1.tgz#a3a46933f5e379fd7c8fbdf352e1f233af96aa70"
+  integrity sha512-MzNrrunwT5rtLudCuR+t1h90dwiMTgjlALULzaSs7YUIDdbVq8YdYwxxLIH8HgR17NmCaRLfYhZMDIky26lzVQ==
 
 "@mapbox/node-pre-gyp@^1.0.0":
   version "1.0.11"
@@ -176,32 +167,34 @@
     mkdirp "^1.0.4"
     rimraf "^3.0.2"
 
-"@popstarfreas/packetfactory@^5.0.0":
-  version "5.0.0"
-  resolved "https://registry.yarnpkg.com/@popstarfreas/packetfactory/-/packetfactory-5.0.0.tgz#1bb5898498ba781f09e405275e1ef8b499c80aad"
-  integrity sha512-yBAO6L0EUuzyf2LKvezeAwG5tUsjzR3xp/1NUJ2vT5GqtXllkurfY+a1YHm46BbCcF0usE8g6Nms/oZ+IkhQbQ==
+"@popstarfreas/packetfactory@^6.1.1":
+  version "6.1.1"
+  resolved "https://registry.yarnpkg.com/@popstarfreas/packetfactory/-/packetfactory-6.1.1.tgz#50b2cef70335e62c2b8d81c23046a94b4d7413b8"
+  integrity sha512-1tmW4xOAC4uVeX4KMd07n9ZMbrjfeO2L2C2bsygo3ZHkX//tgJdYrDXJ/M9JOBpaANUupgmEc3WWVCZTKbaaKg==
   dependencies:
-    "@popstarfreas/rescript-nodejs" "github:popstarfreas/rescript-nodejs#master"
+    "@popstarfreas/rescript-nodejs" "git+https://github.com/popstarfreas/rescript-nodejs.git#f3bd284a3ef17a3fc7cc81ccb7c362b278ea66c7"
     utf8 "^2.1.2"
   optionalDependencies:
-    rescript "^10.1.0"
+    rescript "^11.0.0"
 
-"@popstarfreas/rescript-nodejs@github:popstarfreas/rescript-nodejs#cfbe2f3", "@popstarfreas/rescript-nodejs@github:popstarfreas/rescript-nodejs#master":
-  version "16.0.0"
-  uid cfbe2f33c2b13d3f869b7af3ab2c1ec9bbec8f25
-  resolved "https://codeload.github.com/popstarfreas/rescript-nodejs/tar.gz/cfbe2f33c2b13d3f869b7af3ab2c1ec9bbec8f25"
-  dependencies:
-    rescript "^10.1.4"
+"@popstarfreas/rescript-nodejs@git+https://github.com/popstarfreas/rescript-nodejs.git#f3bd284a3ef17a3fc7cc81ccb7c362b278ea66c7":
+  version "16.1.0"
+  resolved "git+https://github.com/popstarfreas/rescript-nodejs.git#f3bd284a3ef17a3fc7cc81ccb7c362b278ea66c7"
+
+"@popstarfreas/rescript-nodejs@github:popstarfreas/rescript-nodejs#f3bd284a3ef17a3fc7cc81ccb7c362b278ea66c7":
+  version "16.1.0"
+  uid f3bd284a3ef17a3fc7cc81ccb7c362b278ea66c7
+  resolved "https://codeload.github.com/popstarfreas/rescript-nodejs/tar.gz/f3bd284a3ef17a3fc7cc81ccb7c362b278ea66c7"
+
+"@rescript/core@*", "@rescript/core@^1.1.0":
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/@rescript/core/-/core-1.1.0.tgz#e228a2635665b6b6a3288f7fd58552d5c361e253"
+  integrity sha512-pz/CL8+9hBUTeMpUouvZohNsa5rqIwurlXoa1CZWN0ZKuWjMVjaoQ3V+0NB72J/QBbs6/8W82VABKBaDn3fGCA==
 
 "@tootallnate/once@1":
   version "1.1.2"
   resolved "https://registry.yarnpkg.com/@tootallnate/once/-/once-1.1.2.tgz#ccb91445360179a04e7fe6aff78c00ffc1eeaf82"
   integrity sha512-RbzJvlNzmRq5c3O09UipeuXno4tA1FE6ikOjxZK0tuxVv3412l64l5t1W5pj4+rJq9vpkm/kwiR07aZXnsKPxw==
-
-"@types/bcryptjs@^2.4.2":
-  version "2.4.3"
-  resolved "https://registry.yarnpkg.com/@types/bcryptjs/-/bcryptjs-2.4.3.tgz#2302ab44f10912579a183c96eb0e3b951c929915"
-  integrity sha512-XTnH9E/rp51aKGsiMtQCHV/owDLW2E9QAxI7ItpWWm6Gi6XO1e4o3VuEYDma0lbitj1vNOBj05Qk8l2BYoiN4A==
 
 "@types/triple-beam@^1.3.2":
   version "1.3.2"
@@ -498,11 +491,6 @@ fs.realpath@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/fs.realpath/-/fs.realpath-1.0.0.tgz#1504ad2523158caa40db4a2787cb01411994ea4f"
   integrity sha512-OO0pH2lK6a0hZnAdau5ItzHPI6pUlvI7jMVnxUQRtw4owF2wk8lOSabtGDCTP4Ggrg2MbGnWO9X8K1t4+fGMDw==
-
-fsevents@~2.3.2:
-  version "2.3.3"
-  resolved "https://registry.yarnpkg.com/fsevents/-/fsevents-2.3.3.tgz#cac6407785d03675a2a5e1a5305c697b347d90d6"
-  integrity sha512-5xoDfX+fL7faATnagmWPpbFtwh/R77WmMMqqHGS65C3vvB0YHrgF+B1YmZ3441tMj5n63k0212XNoJwzlhffQw==
 
 gauge@^3.0.0:
   version "3.0.2"
@@ -980,15 +968,20 @@ requirejs@^2.3.5:
   resolved "https://registry.yarnpkg.com/requirejs/-/requirejs-2.3.6.tgz#e5093d9601c2829251258c0b9445d4d19fa9e7c9"
   integrity sha512-ipEzlWQe6RK3jkzikgCupiTbTvm4S0/CAU5GlgptkN5SO6F3u0UD0K18wy6ErDqiCyP4J4YYe1HuAShvsxePLg==
 
-rescript@^10.1.0, rescript@^10.1.4:
-  version "10.1.4"
-  resolved "https://registry.yarnpkg.com/rescript/-/rescript-10.1.4.tgz#0f37710d371f32a704f17b4e804f66ce3c79a305"
-  integrity sha512-FFKlS9AG/XrLepWsyw7B+A9DtQBPWEPDPDKghV831Y2KGbie+eeFBOS0xtRHp0xbt7S0N2Dm6hhX+kTZQ/3Ybg==
+"rescript-terrariapacket@github:popstarfreas/rescript-terrariapacket#8d31e306acc12c4aabaadaaeb55c50a6ef8745fd":
+  version "1.2.0"
+  resolved "https://codeload.github.com/popstarfreas/rescript-terrariapacket/tar.gz/8d31e306acc12c4aabaadaaeb55c50a6ef8745fd"
+  dependencies:
+    "@popstarfreas/packetfactory" "^6.1.1"
+    "@popstarfreas/rescript-nodejs" "git+https://github.com/popstarfreas/rescript-nodejs.git#f3bd284a3ef17a3fc7cc81ccb7c362b278ea66c7"
+    "@rescript/core" "^1.1.0"
+    rescript "^11.0.0"
+    typescript "^5.2.2"
 
-rescript@^9.1.4:
-  version "9.1.4"
-  resolved "https://registry.yarnpkg.com/rescript/-/rescript-9.1.4.tgz#1eb126f98d6c16942c0bf0df67c050198e580515"
-  integrity sha512-aXANK4IqecJzdnDpJUsU6pxMViCR5ogAxzuqS0mOr8TloMnzAjJFu63fjD6LCkWrKAhlMkFFzQvVQYaAaVkFXw==
+rescript@^11.0.0:
+  version "11.0.1"
+  resolved "https://registry.yarnpkg.com/rescript/-/rescript-11.0.1.tgz#c74af134dc8a16d152169b2456d0720324835f54"
+  integrity sha512-7T4PRp/d0+CBNnY6PYKffFqo9tGZlvnZpboF/n+8SKS+JZ6VvXJO7W538VPZXf3EYx1COGAWWvkF9e/HgSAqHg==
 
 retry@^0.12.0:
   version "0.12.0"
@@ -1001,13 +994,6 @@ rimraf@^3.0.2:
   integrity sha512-JZkJMZkAGFFPP2YqXZXPbMlMBgsxzE8ILs4lMIX/2o0L9UBw9O/Y3o6wFw/i9YLapcUJWwqbi3kdxIPdC62TIA==
   dependencies:
     glob "^7.1.3"
-
-rollup@^2.41.0:
-  version "2.79.1"
-  resolved "https://registry.yarnpkg.com/rollup/-/rollup-2.79.1.tgz#bedee8faef7c9f93a2647ac0108748f497f081c7"
-  integrity sha512-uKxbd0IhMZOhjAiD5oAFp7BqvkA4Dv47qpOCtaNvng4HBwdbWtdOh8f5nZNuk2rp51PMGk3bzfWu5oayNEuYnw==
-  optionalDependencies:
-    fsevents "~2.3.2"
 
 safe-buffer@5.1.2, safe-buffer@~5.1.0, safe-buffer@~5.1.1:
   version "5.1.2"
@@ -1155,12 +1141,21 @@ tar@^6.0.2, tar@^6.1.11, tar@^6.1.2:
     mkdirp "^1.0.3"
     yallist "^4.0.0"
 
+"terraria-packet@git+https://github.com/popstarfreas/rescript-terrariapacket.git#8d31e306acc12c4aabaadaaeb55c50a6ef8745fd":
+  version "1.2.0"
+  resolved "git+https://github.com/popstarfreas/rescript-terrariapacket.git#8d31e306acc12c4aabaadaaeb55c50a6ef8745fd"
+  dependencies:
+    "@popstarfreas/packetfactory" "^6.1.1"
+    "@popstarfreas/rescript-nodejs" "git+https://github.com/popstarfreas/rescript-nodejs.git#f3bd284a3ef17a3fc7cc81ccb7c362b278ea66c7"
+    "@rescript/core" "^1.1.0"
+    rescript "^11.0.0"
+    typescript "^5.2.2"
+
 "terrariaserver-lite@file:TerrariaServer-Lite/pluginreference":
   version "2.0.0-beta.4"
   dependencies:
-    "@glennsl/bs-json" "^5.0.2"
-    "@popstarfreas/rescript-nodejs" "github:popstarfreas/rescript-nodejs#cfbe2f3"
-    "@types/bcryptjs" "^2.4.2"
+    "@greenlabs/ppx-spice" "^0.2.1"
+    "@popstarfreas/rescript-nodejs" "github:popstarfreas/rescript-nodejs#f3bd284a3ef17a3fc7cc81ccb7c362b278ea66c7"
     bcryptjs "^2.4.3"
     fs-extra "^7.0.1"
     glob "^7.1.2"
@@ -1168,8 +1163,8 @@ tar@^6.0.2, tar@^6.1.11, tar@^6.1.2:
     mysql "^2.15.0"
     require-nocache "^1.0.0"
     requirejs "^2.3.5"
-    rescript "^9.1.4"
-    rescript-terrariapacket "github:popstarfreas/rescript-terrariapacket#3c76ed0"
+    rescript "^11.0.0"
+    rescript-terrariapacket "github:popstarfreas/rescript-terrariapacket#8d31e306acc12c4aabaadaaeb55c50a6ef8745fd"
     sqlite "^4.0.23"
     sqlite3 "^5.0.2"
     utf8 "^2.1.2"
