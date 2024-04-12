@@ -12,11 +12,11 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@rescript/core": "*",
-    "terraria-packet": "git+https://github.com/popstarfreas/rescript-terrariapacket.git#8d31e306acc12c4aabaadaaeb55c50a6ef8745fd",
     "@popstarfreas/rescript-nodejs": "git+https://github.com/popstarfreas/rescript-nodejs.git#f3bd284a3ef17a3fc7cc81ccb7c362b278ea66c7",
+    "@rescript/core": "*",
+    "esbuild": "^0.19.2",
     "rescript": "^11.0.0",
-    "terrariaserver-lite": "file:TerrariaServer-Lite/pluginreference",
-    "esbuild": "^0.19.2"
+    "terraria-packet": "git+https://github.com/popstarfreas/rescript-terrariapacket.git#8d31e306acc12c4aabaadaaeb55c50a6ef8745fd",
+    "terrariaserver-lite": "./TerrariaServer-Lite"
   }
 }

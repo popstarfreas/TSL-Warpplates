@@ -167,6 +167,16 @@
     mkdirp "^1.0.4"
     rimraf "^3.0.2"
 
+"@popstarfreas/packetfactory@6.2.0":
+  version "6.2.0"
+  resolved "https://registry.yarnpkg.com/@popstarfreas/packetfactory/-/packetfactory-6.2.0.tgz#3f35356c1edd2512e14d6b0724f87918128cc715"
+  integrity sha512-4iWspFbivSMMxETe8gpHjYBJSjtZhk01BoGyZcy5GtbDjrNuVTIhw86EQpZNTT3mh5uN07Up59IY8ZN8/aMOyw==
+  dependencies:
+    "@popstarfreas/rescript-nodejs" "git+https://github.com/popstarfreas/rescript-nodejs.git#f3bd284a3ef17a3fc7cc81ccb7c362b278ea66c7"
+    utf8 "^2.1.2"
+  optionalDependencies:
+    rescript "^11.0.0"
+
 "@popstarfreas/packetfactory@^6.1.1":
   version "6.1.1"
   resolved "https://registry.yarnpkg.com/@popstarfreas/packetfactory/-/packetfactory-6.1.1.tgz#50b2cef70335e62c2b8d81c23046a94b4d7413b8"
@@ -1151,10 +1161,11 @@ tar@^6.0.2, tar@^6.1.11, tar@^6.1.2:
     rescript "^11.0.0"
     typescript "^5.2.2"
 
-"terrariaserver-lite@file:TerrariaServer-Lite/pluginreference":
+terrariaserver-lite@./TerrariaServer-Lite:
   version "2.0.0-beta.4"
   dependencies:
     "@greenlabs/ppx-spice" "^0.2.1"
+    "@popstarfreas/packetfactory" "6.2.0"
     "@popstarfreas/rescript-nodejs" "github:popstarfreas/rescript-nodejs#f3bd284a3ef17a3fc7cc81ccb7c362b278ea66c7"
     bcryptjs "^2.4.3"
     fs-extra "^7.0.1"
