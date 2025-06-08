@@ -131,7 +131,7 @@
   resolved "https://registry.yarnpkg.com/@gar/promisify/-/promisify-1.1.3.tgz#555193ab2e3bb3b6adc3d551c9c030d9e860daf6"
   integrity sha512-k2Ty1JcVojjJFwrg/ThKi2ujJ7XNLYaFGNB/bWT9wGR+oSMJHMa5w+CUq6p/pVrKeNNgA7pCqEcjSnHVoqJQFw==
 
-"@greenlabs/ppx-spice@^0.2.1":
+"@greenlabs/ppx-spice@0.2.1":
   version "0.2.1"
   resolved "https://registry.yarnpkg.com/@greenlabs/ppx-spice/-/ppx-spice-0.2.1.tgz#a3a46933f5e379fd7c8fbdf352e1f233af96aa70"
   integrity sha512-MzNrrunwT5rtLudCuR+t1h90dwiMTgjlALULzaSs7YUIDdbVq8YdYwxxLIH8HgR17NmCaRLfYhZMDIky26lzVQ==
@@ -200,6 +200,15 @@
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/@rescript/core/-/core-1.1.0.tgz#e228a2635665b6b6a3288f7fd58552d5c361e253"
   integrity sha512-pz/CL8+9hBUTeMpUouvZohNsa5rqIwurlXoa1CZWN0ZKuWjMVjaoQ3V+0NB72J/QBbs6/8W82VABKBaDn3fGCA==
+
+"@rescript/core@^1.3.0":
+  version "1.6.1"
+  resolved "https://registry.yarnpkg.com/@rescript/core/-/core-1.6.1.tgz#159670c94d64a2b8236f46be2bf09a007b1ece08"
+  integrity sha512-vyb5k90ck+65Fgui+5vCja/mUfzKaK3kOPT4Z6aAJdHLH1eljEi1zKhXroCiCtpNLSWp8k4ulh1bdB5WS0hvqA==
+
+"@rescript/core@git+https://github.com/popstarfreas/rescript-core.git#fdc54fb3e215c922cdc5c76dd1b8bd41dc6a6a59":
+  version "1.6.1"
+  resolved "git+https://github.com/popstarfreas/rescript-core.git#fdc54fb3e215c922cdc5c76dd1b8bd41dc6a6a59"
 
 "@tootallnate/once@1":
   version "1.1.2"
@@ -978,20 +987,15 @@ requirejs@^2.3.5:
   resolved "https://registry.yarnpkg.com/requirejs/-/requirejs-2.3.6.tgz#e5093d9601c2829251258c0b9445d4d19fa9e7c9"
   integrity sha512-ipEzlWQe6RK3jkzikgCupiTbTvm4S0/CAU5GlgptkN5SO6F3u0UD0K18wy6ErDqiCyP4J4YYe1HuAShvsxePLg==
 
-"rescript-terrariapacket@github:popstarfreas/rescript-terrariapacket#8d31e306acc12c4aabaadaaeb55c50a6ef8745fd":
-  version "1.2.0"
-  resolved "https://codeload.github.com/popstarfreas/rescript-terrariapacket/tar.gz/8d31e306acc12c4aabaadaaeb55c50a6ef8745fd"
-  dependencies:
-    "@popstarfreas/packetfactory" "^6.1.1"
-    "@popstarfreas/rescript-nodejs" "git+https://github.com/popstarfreas/rescript-nodejs.git#f3bd284a3ef17a3fc7cc81ccb7c362b278ea66c7"
-    "@rescript/core" "^1.1.0"
-    rescript "^11.0.0"
-    typescript "^5.2.2"
-
 rescript@^11.0.0:
   version "11.0.1"
   resolved "https://registry.yarnpkg.com/rescript/-/rescript-11.0.1.tgz#c74af134dc8a16d152169b2456d0720324835f54"
   integrity sha512-7T4PRp/d0+CBNnY6PYKffFqo9tGZlvnZpboF/n+8SKS+JZ6VvXJO7W538VPZXf3EYx1COGAWWvkF9e/HgSAqHg==
+
+rescript@^11.1.0:
+  version "11.1.4"
+  resolved "https://registry.yarnpkg.com/rescript/-/rescript-11.1.4.tgz#9a42ebc4fc5363707e39cef5b3188160b63bee42"
+  integrity sha512-0bGU0bocihjSC6MsE3TMjHjY0EUpchyrREquLS8VsZ3ohSMD+VHUEwimEfB3kpBI1vYkw3UFZ3WD8R28guz/Vw==
 
 retry@^0.12.0:
   version "0.12.0"
@@ -1161,12 +1165,23 @@ tar@^6.0.2, tar@^6.1.11, tar@^6.1.2:
     rescript "^11.0.0"
     typescript "^5.2.2"
 
+"terraria-packet@github:popstarfreas/rescript-terrariapacket#28e9669eed6a57b011e0bca010a6e14348487db0":
+  version "1.2.0"
+  resolved "https://codeload.github.com/popstarfreas/rescript-terrariapacket/tar.gz/28e9669eed6a57b011e0bca010a6e14348487db0"
+  dependencies:
+    "@popstarfreas/packetfactory" "^6.1.1"
+    "@popstarfreas/rescript-nodejs" "git+https://github.com/popstarfreas/rescript-nodejs.git#f3bd284a3ef17a3fc7cc81ccb7c362b278ea66c7"
+    "@rescript/core" "git+https://github.com/popstarfreas/rescript-core.git#fdc54fb3e215c922cdc5c76dd1b8bd41dc6a6a59"
+    rescript "^11.0.0"
+    typescript "^5.2.2"
+
 terrariaserver-lite@./TerrariaServer-Lite:
   version "2.0.0-beta.4"
   dependencies:
-    "@greenlabs/ppx-spice" "^0.2.1"
+    "@greenlabs/ppx-spice" "0.2.1"
     "@popstarfreas/packetfactory" "6.2.0"
     "@popstarfreas/rescript-nodejs" "github:popstarfreas/rescript-nodejs#f3bd284a3ef17a3fc7cc81ccb7c362b278ea66c7"
+    "@rescript/core" "^1.3.0"
     bcryptjs "^2.4.3"
     fs-extra "^7.0.1"
     glob "^7.1.2"
@@ -1174,10 +1189,10 @@ terrariaserver-lite@./TerrariaServer-Lite:
     mysql "^2.15.0"
     require-nocache "^1.0.0"
     requirejs "^2.3.5"
-    rescript "^11.0.0"
-    rescript-terrariapacket "github:popstarfreas/rescript-terrariapacket#8d31e306acc12c4aabaadaaeb55c50a6ef8745fd"
+    rescript "^11.1.0"
     sqlite "^4.0.23"
     sqlite3 "^5.0.2"
+    terraria-packet "github:popstarfreas/rescript-terrariapacket#28e9669eed6a57b011e0bca010a6e14348487db0"
     utf8 "^2.1.2"
     uuid "^3.2.1"
     winston "3.3.3"
