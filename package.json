@@ -4,9 +4,9 @@
   "description": "",
   "scripts": {
     "watch": "rescript build -w",
-    "build:submodule": "cd ./TerrariaServer-Lite/ && yarn install && yarn build:all && cd ..",
+    "build:submodule": "cd ./TerrariaServer-Lite/ && pnpm install && pnpm run build:all && cd ..",
     "build:core": "rescript",
-    "build:packed": "esbuild lib/js/src/Index.js --bundle --platform=node --outfile=output/index.js",
+    "build:packed": "esbuild lib/js/src/Index.js --bundle --platform=node --external:terrariaserver-lite --outfile=output/index.js",
     "auto:build": "chokidar \"src/**/*\" -c \"./build.sh\""
   },
   "author": "",
