@@ -16,13 +16,11 @@ function copyDir(src, dest) {
   }
 }
 
-console.log("Build Step 1 of 5")
-child_process.execSync("pnpm remove terrariaserver-lite", { stdio: "inherit" })
-console.log("Build Step 2 of 5")
+console.log("Build Step 1 of 4")
 child_process.execSync("pnpm i --production=true ../../pluginreference", { stdio: "inherit" })
-console.log("Build Step 3 of 5")
+console.log("Build Step 2 of 4")
 child_process.execSync("pnpm run build:core", { stdio: "inherit" })
-console.log("Build Step 4 of 5")
+console.log("Build Step 3 of 4")
 child_process.execSync("pnpm run build:packed", { stdio: "inherit" })
-console.log("Build Step 5 of 5")
+console.log("Build Step 4 of 4")
 fs.renameSync("./output", "./plugin")
