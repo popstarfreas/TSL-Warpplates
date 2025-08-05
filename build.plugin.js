@@ -19,7 +19,7 @@ function copyDir(src, dest) {
 console.log("Build Step 1 of 5")
 child_process.execSync("pnpm remove terrariaserver-lite", { stdio: "inherit" })
 console.log("Build Step 2 of 5")
-child_process.execSync("pnpm add ../../pluginreference", { stdio: "inherit" })
+child_process.execSync("pnpm i --production=true ../../pluginreference", { stdio: "inherit" })
 console.log("Build Step 3 of 5")
 child_process.execSync("pnpm run build:core", { stdio: "inherit" })
 console.log("Build Step 4 of 5")
