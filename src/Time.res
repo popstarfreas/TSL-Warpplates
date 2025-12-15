@@ -22,25 +22,25 @@ let format = (self: t): string => {
     let seconds = Belt.Float.toInt(milliseconds /. secondsToMilliseconds(1))
     let formattedTime = ref("")
     if days > 0 {
-        let prefix = formattedTime.contents->Js.String2.length > 0 ? " " : ""
+        let prefix = formattedTime.contents->String.length > 0 ? " " : ""
         let suffix = days > 1 ? "s" : ""
         formattedTime.contents = `${prefix}${days->Belt.Int.toString} day${suffix}`
     }
 
     if hours > 0 {
-        let prefix = formattedTime.contents->Js.String2.length > 0 ? " " : ""
+        let prefix = formattedTime.contents->String.length > 0 ? " " : ""
         let suffix = hours > 1 ? "s" : ""
         formattedTime.contents = formattedTime.contents ++ `${prefix}${hours->Belt.Int.toString} hour${suffix}`
     }
 
     if minutes > 0 {
-        let prefix = formattedTime.contents->Js.String2.length > 0 ? " " : ""
+        let prefix = formattedTime.contents->String.length > 0 ? " " : ""
         let suffix = minutes > 1 ? "s" : ""
         formattedTime.contents = formattedTime.contents ++ `${prefix}${minutes->Belt.Int.toString} minute${suffix}`
     }
 
     if seconds > 0 {
-        let prefix = formattedTime.contents->Js.String2.length > 0 ? " " : ""
+        let prefix = formattedTime.contents->String.length > 0 ? " " : ""
         let suffix = seconds > 1 ? "s" : ""
         formattedTime.contents = formattedTime.contents ++ `${prefix}${seconds->Belt.Int.toString} second${suffix}`
     }

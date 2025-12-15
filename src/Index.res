@@ -23,5 +23,4 @@ let default: Extension.clsOfT<Warpplates.t> = Extension.make(
   ~name="Warpplates",
   ~version="v2.0.0",
   ~order=0,
-  (),
 )

@@ -2,9 +2,9 @@
     "name": "warpplates",
     "version": "2.0.0",
     "namespace": true,
-    "suffix": ".js",
+    "suffix": ".mjs",
     "package-specs": {
-        "module": "commonjs",
+        "module": "es6",
         "in-source": false
     },
     "sources": {
@@ -14,13 +14,12 @@
     "bs-dependencies": [
         "terrariaserver-lite",
         "@popstarfreas/rescript-nodejs",
-        "terraria-packet",
-        "@rescript/core"
-    ],
-    "bsc-flags": [
-        "-open RescriptCore"
+        "terraria-packet"
     ],
     "warnings": {
         "error": "+A"
+    },
+    "experimental-features": {
+        "LetUnwrap": true
     }
 }

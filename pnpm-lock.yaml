@@ -8,24 +8,28 @@ importers:
 
   .:
     dependencies:
+      '@popstarfreas/packetfactory':
+        specifier: ^7.1.3
+        version: 7.1.3
       '@popstarfreas/rescript-nodejs':
-        specifier: git+https://github.com/popstarfreas/rescript-nodejs.git#f3bd284a3ef17a3fc7cc81ccb7c362b278ea66c7
-        version: https://codeload.github.com/popstarfreas/rescript-nodejs/tar.gz/f3bd284a3ef17a3fc7cc81ccb7c362b278ea66c7
-      '@rescript/core':
-        specifier: '*'
-        version: 1.6.1(rescript@11.1.4)
+        specifier: git+https://github.com/popstarfreas/rescript-nodejs.git#1d7fe459def442f3f075921904f9ae6de50dd3a4
+        version: https://codeload.github.com/popstarfreas/rescript-nodejs/tar.gz/1d7fe459def442f3f075921904f9ae6de50dd3a4
       esbuild:
         specifier: ^0.19.2
         version: 0.19.12
       rescript:
-        specifier: ^11.1.0
-        version: 11.1.4
+        specifier: ^12.0.1
+        version: 12.0.1
       terraria-packet:
-        specifier: git+https://github.com/popstarfreas/rescript-terrariapacket.git#8d31e306acc12c4aabaadaaeb55c50a6ef8745fd
-        version: https://codeload.github.com/popstarfreas/rescript-terrariapacket/tar.gz/8d31e306acc12c4aabaadaaeb55c50a6ef8745fd
+        specifier: git+https://github.com/popstarfreas/rescript-terrariapacket.git#c8f783d6bdb02b5bcccc4acf74ec53cd5b531501
+        version: https://codeload.github.com/popstarfreas/rescript-terrariapacket/tar.gz/c8f783d6bdb02b5bcccc4acf74ec53cd5b531501(rescript@12.0.1)
       terrariaserver-lite:
         specifier: ./TerrariaServer-Lite
         version: link:TerrariaServer-Lite
+    devDependencies:
+      '@rescript/linux-x64':
+        specifier: ^12.0.1
+        version: 12.0.1
 
 packages:
 
@@ -167,8 +171,12 @@ packages:
     cpu: [x64]
     os: [win32]
 
-  '@popstarfreas/packetfactory@6.2.0':
-    resolution: {integrity: sha512-4iWspFbivSMMxETe8gpHjYBJSjtZhk01BoGyZcy5GtbDjrNuVTIhw86EQpZNTT3mh5uN07Up59IY8ZN8/aMOyw==}
+  '@popstarfreas/packetfactory@7.1.3':
+    resolution: {integrity: sha512-hgsR+1d99UYykstXveILfRnNCKPFXwEAGImxqOu5OkrLZfMuisu2K1zWg57nzBojk8ckSp0PLupS0Lapv21ZwA==}
+
+  '@popstarfreas/rescript-nodejs@https://codeload.github.com/popstarfreas/rescript-nodejs/tar.gz/1d7fe459def442f3f075921904f9ae6de50dd3a4':
+    resolution: {tarball: https://codeload.github.com/popstarfreas/rescript-nodejs/tar.gz/1d7fe459def442f3f075921904f9ae6de50dd3a4}
+    version: 16.1.0
 
   '@popstarfreas/rescript-nodejs@https://codeload.github.com/popstarfreas/rescript-nodejs/tar.gz/f3bd284a3ef17a3fc7cc81ccb7c362b278ea66c7':
     resolution: {tarball: https://codeload.github.com/popstarfreas/rescript-nodejs/tar.gz/f3bd284a3ef17a3fc7cc81ccb7c362b278ea66c7}
@@ -179,27 +187,52 @@ packages:
     peerDependencies:
       rescript: '>=11.1.0'
 
+  '@rescript/darwin-arm64@12.0.1':
+    resolution: {integrity: sha512-JJddiKKfOSc9X+2rt6IrbEUlOBaIfgjkWzCN986czZ5YV4lh3jysPVk6EQHaip2ibPkwf/nLv6Pin4t+XmdqLQ==}
+    engines: {node: '>=20.11.0'}
+    cpu: [arm64]
+    os: [darwin]
+
+  '@rescript/darwin-x64@12.0.1':
+    resolution: {integrity: sha512-tZSeHr9MQ90oKULDIn9ugvP08eLCflH2uO02iF7z1i8RshPrfD36qFiPOn4WxzcSJuqynffNLEgeWYrnPiZ0JQ==}
+    engines: {node: '>=20.11.0'}
+    cpu: [x64]
+    os: [darwin]
+
+  '@rescript/linux-arm64@12.0.1':
+    resolution: {integrity: sha512-V/xnkFgEvSRMlyT1XCptnWWXgySFR9aKdja74VeDyEGLc6MGmi8zopxUUFcwCQXxV/zPAFkIxjz8xMY0SBCAmQ==}
+    engines: {node: '>=20.11.0'}
+    cpu: [arm64]
+    os: [linux]
+
+  '@rescript/linux-x64@12.0.1':
+    resolution: {integrity: sha512-WpVBjAvLsKATOJTckI6PDf4IFnHHxwsSVtklC+XAXbwqHLP1gqDDuVcykOOIWexxepod+QvBvEZGjzNPJ5L8gA==}
+    engines: {node: '>=20.11.0'}
+    cpu: [x64]
+    os: [linux]
+
+  '@rescript/runtime@12.0.1':
+    resolution: {integrity: sha512-pMoWvllPFK0cl87vMYBVvll+DaAdPAsRuLIIJa+Q8LMhcS7cqpaZVflU3LbH+U/kv3vWaUYIfLBObwGnXw/CDg==}
+
+  '@rescript/win32-x64@12.0.1':
+    resolution: {integrity: sha512-Hv6nwb6A94qtj6b4PcIsmoWhLIcLt6wLuHpD9YNxj4/d9FkrHM/yj9ZKhKan/9rfg4wkHl1cZE898AZe/nWq9g==}
+    engines: {node: '>=20.11.0'}
+    cpu: [x64]
+    os: [win32]
+
   esbuild@0.19.12:
     resolution: {integrity: sha512-aARqgq8roFBj054KvQr5f1sFu0D65G+miZRCuJyJ0G13Zwx7vRar5Zhn2tkQNzIXcBrNVsv/8stehpj+GAjgbg==}
     engines: {node: '>=12'}
     hasBin: true
 
-  rescript@11.1.4:
-    resolution: {integrity: sha512-0bGU0bocihjSC6MsE3TMjHjY0EUpchyrREquLS8VsZ3ohSMD+VHUEwimEfB3kpBI1vYkw3UFZ3WD8R28guz/Vw==}
-    engines: {node: '>=10'}
+  rescript@12.0.1:
+    resolution: {integrity: sha512-59JyEUyLj+IPd9VutAXpBXRGqaeaHCMtvACJNAy/oI1hjpjklQ2UJE07oLhxoWB4SDZrCxzowNUpE46UAgjOXg==}
+    engines: {node: '>=20.11.0'}
     hasBin: true
 
-  terraria-packet@https://codeload.github.com/popstarfreas/rescript-terrariapacket/tar.gz/8d31e306acc12c4aabaadaaeb55c50a6ef8745fd:
-    resolution: {tarball: https://codeload.github.com/popstarfreas/rescript-terrariapacket/tar.gz/8d31e306acc12c4aabaadaaeb55c50a6ef8745fd}
-    version: 1.2.0
-
-  typescript@5.8.3:
-    resolution: {integrity: sha512-p1diW6TqL9L07nNxvRMM7hMMw4c5XOo/1ibL4aAIGmSAt9slTE1Xgw5KWuof2uTOvCg9BY7ZRi+GaF+7sfgPeQ==}
-    engines: {node: '>=14.17'}
-    hasBin: true
-
-  utf8@2.1.2:
-    resolution: {integrity: sha512-QXo+O/QkLP/x1nyi54uQiG0XrODxdysuQvE5dtVqv7F5K2Qb6FsN+qbr6KhF5wQ20tfcV3VQp0/2x1e1MRSPWg==}
+  terraria-packet@https://codeload.github.com/popstarfreas/rescript-terrariapacket/tar.gz/c8f783d6bdb02b5bcccc4acf74ec53cd5b531501:
+    resolution: {tarball: https://codeload.github.com/popstarfreas/rescript-terrariapacket/tar.gz/c8f783d6bdb02b5bcccc4acf74ec53cd5b531501}
+    version: 1.0.0
 
 snapshots:
 
@@ -272,18 +305,35 @@ snapshots:
   '@esbuild/win32-x64@0.19.12':
     optional: true
 
-  '@popstarfreas/packetfactory@6.2.0':
+  '@popstarfreas/packetfactory@7.1.3':
     dependencies:
       '@popstarfreas/rescript-nodejs': https://codeload.github.com/popstarfreas/rescript-nodejs/tar.gz/f3bd284a3ef17a3fc7cc81ccb7c362b278ea66c7
-      utf8: 2.1.2
     optionalDependencies:
-      rescript: 11.1.4
+      rescript: 12.0.1
+
+  '@popstarfreas/rescript-nodejs@https://codeload.github.com/popstarfreas/rescript-nodejs/tar.gz/1d7fe459def442f3f075921904f9ae6de50dd3a4': {}
 
   '@popstarfreas/rescript-nodejs@https://codeload.github.com/popstarfreas/rescript-nodejs/tar.gz/f3bd284a3ef17a3fc7cc81ccb7c362b278ea66c7': {}
 
-  '@rescript/core@1.6.1(rescript@11.1.4)':
+  '@rescript/core@1.6.1(rescript@12.0.1)':
     dependencies:
-      rescript: 11.1.4
+      rescript: 12.0.1
+
+  '@rescript/darwin-arm64@12.0.1':
+    optional: true
+
+  '@rescript/darwin-x64@12.0.1':
+    optional: true
+
+  '@rescript/linux-arm64@12.0.1':
+    optional: true
+
+  '@rescript/linux-x64@12.0.1': {}
+
+  '@rescript/runtime@12.0.1': {}
+
+  '@rescript/win32-x64@12.0.1':
+    optional: true
 
   esbuild@0.19.12:
     optionalDependencies:
@@ -311,16 +361,20 @@ snapshots:
       '@esbuild/win32-ia32': 0.19.12
       '@esbuild/win32-x64': 0.19.12
 
-  rescript@11.1.4: {}
-
-  terraria-packet@https://codeload.github.com/popstarfreas/rescript-terrariapacket/tar.gz/8d31e306acc12c4aabaadaaeb55c50a6ef8745fd:
+  rescript@12.0.1:
     dependencies:
-      '@popstarfreas/packetfactory': 6.2.0
-      '@popstarfreas/rescript-nodejs': https://codeload.github.com/popstarfreas/rescript-nodejs/tar.gz/f3bd284a3ef17a3fc7cc81ccb7c362b278ea66c7
-      '@rescript/core': 1.6.1(rescript@11.1.4)
-      rescript: 11.1.4
-      typescript: 5.8.3
+      '@rescript/runtime': 12.0.1
+    optionalDependencies:
+      '@rescript/darwin-arm64': 12.0.1
+      '@rescript/darwin-x64': 12.0.1
+      '@rescript/linux-arm64': 12.0.1
+      '@rescript/linux-x64': 12.0.1
+      '@rescript/win32-x64': 12.0.1
 
-  typescript@5.8.3: {}
-
-  utf8@2.1.2: {}
+  terraria-packet@https://codeload.github.com/popstarfreas/rescript-terrariapacket/tar.gz/c8f783d6bdb02b5bcccc4acf74ec53cd5b531501(rescript@12.0.1):
+    dependencies:
+      '@popstarfreas/packetfactory': 7.1.3
+      '@rescript/core': 1.6.1(rescript@12.0.1)
+      '@rescript/runtime': 12.0.1
+    transitivePeerDependencies:
+      - rescript

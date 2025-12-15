@@ -26,17 +26,17 @@ let make = (extension: Extension.t): t => {
 }
 
 @module("fs")
-external writeFile: (string, string, Js.nullable<Js.Exn.t> => unit) => unit = "writeFile"
+external writeFile: (string, string, nullable<JsExn.t> => unit) => unit = "writeFile"
 let saveWarpplates = (self: t) => {
-  let json = Js.Json.stringifyAny(self.warpplates)
+  let json = JSON.stringifyAny(self.warpplates)
   switch json {
   | Some(warpplates) =>
     writeFile("./persistence/warpplates.json", warpplates, err => {
-      switch err->Js.Nullable.toOption {
+      switch err->Nullable.toOption {
       | Some(err) =>
         self.logger->Log.error(
           "Could not write warpplates to file. " ++
-          err->Js.Exn.message->Belt.Option.getWithDefault("(Error message not found)"),
+          err->JsExn.message->Belt.Option.getWithDefault("(Error message not found)"),
         )
       | None => ()
       }
@@ -46,22 +46,20 @@ let saveWarpplates = (self: t) => {
 }
 
 @module("fs")
-external readFile: (
-  string,
-  (Js.nullable<Js.Exn.t>, Js.undefined<NodeJs.Buffer.t>) => unit,
-) => unit = "readFile"
+external readFile: (string, (nullable<JsExn.t>, nullable<NodeJs.Buffer.t>) => unit) => unit =
+  "readFile"
 let loadWarpplates = (self: t) => {
   readFile("./persistence/warpplates.json", (err, data) => {
-    switch (err->Js.Nullable.toOption, data->Js.Undefined.toOption) {
+    switch (err->Nullable.toOption, data->Nullable.toOption) {
     | (None, Some(data)) =>
-      self.warpplates = data->NodeJs.Buffer.toString->Js.Json.parseExn->Obj.magic
+      self.warpplates = data->NodeJs.Buffer.toString->JSON.parseOrThrow->Obj.magic
     | _ => ()
     }
   })
 }
 
 let addWarpplate = (self: t, warpplate: warpplate) => {
-  self.warpplates->Js.Array2.push(warpplate)->ignore
+  self.warpplates->Array.push(warpplate)->ignore
   saveWarpplates(self)
 }
 
@@ -71,7 +69,7 @@ let sendClientToDimension = (client: Client.t, dimension: string) => {
     TerrariaServerLite.PacketWriter.make()
     ->setType(PacketType.DimensionsUpdate)
     ->packInt16(2)
-    ->packString(dimension->Js.String2.toLowerCase)
+    ->packString(dimension->String.toLowerCase)
     ->data,
   )
 }
@@ -96,8 +94,8 @@ let packetHandler = TerrariaServerLite.ExtensionPacketHandler.make((
       let positionX = (reader->readSingle /. 16.0)->Belt.Float.toInt
       let positionY = (reader->readSingle /. 16.0)->Belt.Float.toInt
       let boundary = 3
-      let matchedWarpplate = self.warpplates->Js.Array2.find(({x, y}) => {
-        Js.Math.abs_int(x - positionX) <= boundary && Js.Math.abs_int(y - positionY) <= boundary
+      let matchedWarpplate = self.warpplates->Array.find(({x, y}) => {
+        Math.Int.abs(x - positionX) <= boundary && Math.Int.abs(y - positionY) <= boundary
       })
 
       switch matchedWarpplate {
@@ -111,7 +109,7 @@ let packetHandler = TerrariaServerLite.ExtensionPacketHandler.make((
               switch lastSentMessage {
               | Some(lastSentMessage) => {
                   let lastSentMessage = Obj.magic(lastSentMessage)
-                  if Js.Date.now() -. lastSentMessage > 3000.0 {
+                  if Date.now() -. lastSentMessage > 3000.0 {
                     client->Client.sendChatMessage(
                       ~message="You need to be logged-in to use this warpplate.",
                       ~color={
@@ -123,11 +121,11 @@ let packetHandler = TerrariaServerLite.ExtensionPacketHandler.make((
                     )
                     client
                     ->Client.extProperties
-                    ->ExtMap.set(messageTimeKey, Obj.magic(Js.Date.now()))
+                    ->ExtMap.set(messageTimeKey, Obj.magic(Date.now()))
                   }
                 }
               | None => {
-                  client->Client.extProperties->ExtMap.set(messageTimeKey, Obj.magic(Js.Date.now()))
+                  client->Client.extProperties->ExtMap.set(messageTimeKey, Obj.magic(Date.now()))
                   client->Client.sendChatMessage(
                     ~message="You need to be logged-in to use this warpplate.",
                     ~color={
