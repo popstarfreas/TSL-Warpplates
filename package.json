@@ -6,7 +6,7 @@
     "watch": "rescript build -w",
     "build:submodule": "cd ./TerrariaServer-Lite/ && pnpm install && pnpm run build:all && cd ..",
     "build:core": "rescript",
-    "build:packed": "esbuild lib/es6/src/Index.mjs --format=esm --bundle --platform=node --external:terrariaserver-lite --outfile=output/index.mjs",
+    "build:packed": "esbuild lib/es6/src/Index.mjs --format=esm --bundle --platform=node --external:terrariaserver-lite --external:terraria-packet --outfile=output/index.mjs",
     "auto:build": "chokidar \"src/**/*\" -c \"./build.sh\""
   },
   "author": "",
