@@ -1,6 +1,5 @@
 {
     "name": "warpplates",
-    "version": "2.0.0",
     "namespace": true,
     "suffix": ".mjs",
     "package-specs": {
@@ -11,7 +10,7 @@
         "dir": "src",
         "subdirs": true
     },
-    "bs-dependencies": [
+    "dependencies": [
         "terrariaserver-lite",
         "@popstarfreas/rescript-nodejs",
         "terraria-packet"

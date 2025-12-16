@@ -36,7 +36,7 @@ let saveWarpplates = (self: t) => {
       | Some(err) =>
         self.logger->Log.error(
           "Could not write warpplates to file. " ++
-          err->JsExn.message->Belt.Option.getWithDefault("(Error message not found)"),
+          err->JsExn.message->Option.getOr("(Error message not found)"),
         )
       | None => ()
       }
@@ -91,8 +91,8 @@ let packetHandler = TerrariaServerLite.ExtensionPacketHandler.make((
       let _misc = reader->readByte
       let _sleepingInfo = reader->readByte
       let _selectedItem = reader->readByte
-      let positionX = (reader->readSingle /. 16.0)->Belt.Float.toInt
-      let positionY = (reader->readSingle /. 16.0)->Belt.Float.toInt
+      let positionX = (reader->readSingle /. 16.0)->Float.toInt
+      let positionY = (reader->readSingle /. 16.0)->Float.toInt
       let boundary = 3
       let matchedWarpplate = self.warpplates->Array.find(({x, y}) => {
         Math.Int.abs(x - positionX) <= boundary && Math.Int.abs(y - positionY) <= boundary

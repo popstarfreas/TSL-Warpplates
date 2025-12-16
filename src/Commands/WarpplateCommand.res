@@ -8,7 +8,7 @@ let handleAddWarpplate = (warpplates: Warpplates.t, client: Client.t, params: ar
   let noGuests = params->Array.some(param => param === "-noguests")
   warpplates->Warpplates.addWarpplate({dimension, x, y, noGuests})
   client->Client.sendChatMessage(
-    ~message=`Added warpplate to ${dimension} at ${x->Belt.Int.toString}, ${y->Belt.Int.toString}`,
+    ~message=`Added warpplate to ${dimension} at ${x->Int.toString}, ${y->Int.toString}`,
     (),
   )
   ()
@@ -28,8 +28,8 @@ let command = ExtensionCommand.make(["warpplate"], "warpplate.set", (
   command,
   client: Client.t,
 ) => {
-  switch command.parameters->Belt.List.fromArray {
-  | list{"add", ...params} => handleAddWarpplate(warpplates, client, params->Belt.List.toArray)
+  switch command.parameters->List.fromArray {
+  | list{"add", ...params} => handleAddWarpplate(warpplates, client, params->List.toArray)
   | list{"ignore", ..._} => handleIgnoreWarpplates(client)
   | _ => client->Client.sendChatMessage(~message="Unknown parameter.", ())
   }

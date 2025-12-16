@@ -6,7 +6,7 @@
     "watch": "rescript build -w",
     "build:submodule": "cd ./TerrariaServer-Lite/ && pnpm install && pnpm run build:all && cd ..",
     "build:core": "rescript",
-    "build:packed": "esbuild lib/js/src/Index.js --bundle --platform=node --external:terrariaserver-lite --outfile=output/index.js",
+    "build:packed": "esbuild lib/es6/src/Index.mjs --format=esm --bundle --platform=node --external:terrariaserver-lite --outfile=output/index.mjs",
     "auto:build": "chokidar \"src/**/*\" -c \"./build.sh\""
   },
   "author": "",
@@ -14,6 +14,7 @@
   "dependencies": {
     "@popstarfreas/packetfactory": "^7.1.3",
     "@popstarfreas/rescript-nodejs": "git+https://github.com/popstarfreas/rescript-nodejs.git#1d7fe459def442f3f075921904f9ae6de50dd3a4",
+    "@rescript/runtime": "^12.0.1",
     "esbuild": "^0.19.2",
     "rescript": "^12.0.1",
     "terraria-packet": "git+https://github.com/popstarfreas/rescript-terrariapacket.git#c8f783d6bdb02b5bcccc4acf74ec53cd5b531501",
