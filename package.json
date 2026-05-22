@@ -17,7 +17,7 @@
     "@rescript/runtime": "^12.0.1",
     "esbuild": "^0.19.2",
     "rescript": "^12.0.1",
-    "terraria-packet": "git+https://github.com/popstarfreas/rescript-terrariapacket.git#c8f783d6bdb02b5bcccc4acf74ec53cd5b531501",
+    "terraria-packet": "github:popstarfreas/rescript-terrariapacket#396bc430fbff3c8d700ee6dd016bc8e36419730b",
     "terrariaserver-lite": "./TerrariaServer-Lite"
   },
   "devDependencies": {

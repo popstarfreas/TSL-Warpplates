@@ -64,14 +64,12 @@ let addWarpplate = (self: t, warpplate: warpplate) => {
 }
 
 let sendClientToDimension = (client: Client.t, dimension: string) => {
-  open TerrariaServerLite.PacketWriter
-  client->Client.sendPacket(
-    TerrariaServerLite.PacketWriter.make()
-    ->setType(PacketType.DimensionsUpdate)
-    ->packInt16(2)
-    ->packString(dimension->String.toLowerCase)
-    ->data,
-  )
+  switch TerrariaPacket.Packet.DimensionsUpdate.toBuffer(
+    SwitchServer(dimension->String.toLowerCase),
+  ) {
+  | Ok(data) => client->Client.sendPacket(data->Obj.magic)
+  | Error(_) => ()
+  }
 }
 
 let messageTimeKey = "warpplates-login-required"
@@ -81,18 +79,20 @@ let packetHandler = TerrariaServerLite.ExtensionPacketHandler.make((
   client: Client.t,
   packet: Packet.t,
 ) => {
-  open TerrariaServerLite.PacketReader
   switch packet.packetType->PacketType.fromInt {
   | Some(PacketType.PlayerUpdate) => {
-      let reader = TerrariaServerLite.PacketReader.make(packet.data)
-      let _playerId = reader->readByte
-      let _control = reader->readByte
-      let _pulley = reader->readByte
-      let _misc = reader->readByte
-      let _sleepingInfo = reader->readByte
-      let _selectedItem = reader->readByte
-      let positionX = (reader->readSingle /. 16.0)->Float.toInt
-      let positionY = (reader->readSingle /. 16.0)->Float.toInt
+      let playerUpdate = TerrariaPacket.Packet.PlayerUpdate.parse(packet.data->Obj.magic)
+      let position = switch playerUpdate {
+      | Ok({position}) => Some(position)
+      | Error(_) => None
+      }
+      let (positionX, positionY) = switch position {
+      | Some(position) => (
+          (position.x /. 16.0)->Float.toInt,
+          (position.y /. 16.0)->Float.toInt,
+        )
+      | None => (-9999, -9999)
+      }
       let boundary = 3
       let matchedWarpplate = self.warpplates->Array.find(({x, y}) => {
         Math.Int.abs(x - positionX) <= boundary && Math.Int.abs(y - positionY) <= boundary
